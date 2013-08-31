@@ -8,10 +8,6 @@ Stated 指的是藉由 startService() 開始一個背景程式 Service, 但是�
 2. Bound
 Bound 指的是藉由 bindService() 開始一個背景程式 Service, 讓丟任務進來的元件(Activity)與背景程式 Service 產生相依, 如果在背景程式執行的過程中, 丟任務的原件先 Destroy() 了, 那麼 Service 也會跟著 Destroy(). 當背景程式需要與前端元件溝通時, 我們會使用 Bound.
 
-兩種用法的生命週期 LifeCycle 會不一樣, 直接看圖比較容易瞭解:
-
-
-
 
 Service 的創造:
 
@@ -32,15 +28,6 @@ Service 的註冊
 
 我們的 Service 必須在 AndroidManifest.xml 裡註冊,
 這樣才能被 Application 給找到 (跟 Activity 一樣!)
-
- <service android:exported="false" android:name=".TimerService">  
-       <intent-filter>  
-         <action android:name="com.example.learnservice.action.PLAY" />  
-         <action android:name="com.example.learnservice.action.STOP" />  
-       </intent-filter>  
- </service>  
-
-
 
 Service 的範例 : 用 Service 做一個計時器 (程式碼連結)
 
